@@ -119,7 +119,7 @@ public class demo7 {
     * exif读取
     *
     */
-    public static JSONObject exifRead(File file){
+    public JSONObject exifRead(File file){
         JSONObject jsonObject = new JSONObject();
 
         try {
