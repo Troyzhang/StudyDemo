@@ -113,36 +113,4 @@ public class demo7 {
         return outputDate;
     }
 
-
-    /*
-    *
-    * exif读取
-    *
-    */
-    public JSONObject exifRead(File file){
-        JSONObject jsonObject = new JSONObject();
-
-        try {
-            Metadata metadata = ImageMetadataReader.readMetadata(file);
-
-            for (Directory directory : metadata.getDirectories()){
-                for (Tag tag : directory.getTags()){
-                    jsonObject.put(tag.getTagName(), tag.getDescription());
-                }
-                if (directory.hasErrors()){
-                    for (String error : directory.getErrors()){
-                        jsonObject.put("error", error);
-                    }
-                }
-            }
-
-        } catch (ImageProcessingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return jsonObject;
-    }
-
 }
