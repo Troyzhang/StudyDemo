@@ -1,4 +1,4 @@
-package com.troy.controller;
+package com.troy.action;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
