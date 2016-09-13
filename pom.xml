@@ -5,10 +5,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.troy</groupId>
-    <artifactId>studyDemo</artifactId>
+    <artifactId>StudyDemo</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>studyDemo Maven Webapp</name>
+    <name>StudyDemo Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
     <!--项目依赖 -->
@@ -93,14 +93,14 @@
             <version>LATEST</version>
         </dependency>
 
-        <!--exif插件-->
+        <!--exif包-->
         <dependency>
             <groupId>com.drewnoakes</groupId>
             <artifactId>metadata-extractor</artifactId>
             <version>2.9.1</version>
         </dependency>
 
-
+        <!--jetty包-->
         <dependency>
             <groupId>org.eclipse.jetty.aggregate</groupId>
             <artifactId>jetty-all</artifactId>
@@ -114,7 +114,7 @@
     </dependencies>
 
     <build>
-        <finalName>studyDemo</finalName>
+        <finalName>StudyDemo</finalName>
         <resources>
             <!--表示把java目录下的有关xml文件,properties文件编译/打包的时候放在resource目录下-->
             <resource>

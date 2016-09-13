@@ -2,22 +2,12 @@ package com.troy.demo;
 
 import com.drew.imaging.ImageMetadataReader;
 import com.drew.imaging.ImageProcessingException;
-import com.drew.lang.Rational;
 import com.drew.metadata.Directory;
 import com.drew.metadata.Metadata;
-import com.drew.metadata.exif.*;
 import com.drew.metadata.Tag;
-import mediautil.image.jpeg.Entry;
-import mediautil.image.jpeg.Exif;
-import mediautil.image.jpeg.LLJTran;
-import mediautil.image.jpeg.LLJTranException;
-import net.sourceforge.jheader.App1Header;
-import net.sourceforge.jheader.JpegHeaders;
 import org.json.JSONObject;
 
 import java.io.*;
-import java.util.Map;
-import java.util.SortedMap;
 
 /**
  * Created by zhangyongyu on 16/9/9.
@@ -40,11 +30,7 @@ public class demo8 {
         System.out.println(jsonObject);
         System.out.println("-----");
 
-        if (exifWrite(file).getString("message") == "successful") {
-            JSONObject json = exifRead(file);
-            System.out.println(json);
-        } else
-            System.out.println("error");
+
     }
 
     public static JSONObject exifRead(File file){
@@ -77,39 +63,39 @@ public class demo8 {
     }
 
 
-    public static JSONObject exifWrite(File file){
-        JSONObject jsonObject = new JSONObject();
-
-        try {
-
-            JpegHeaders jpegHeaders = new JpegHeaders(file.toString());
-
-            // EXIF
-            App1Header exifHeader = jpegHeaders.getApp1Header();
-
-            // 遍历显示EXIF
-//            Map.Entry entry;
-//            entry.getKey()
-//            SortedMap tags = exifHeader.getTags();
-//            for (Map.Entry entry : tags.entrySet()) {
-//                System.out.println(entry.getKey() + "[" + entry.getKey().name
-//                        + "]:" + entry.getValue());
-//            }
-
-            // 修改EXIF的拍照日期
-//            exifHeader.setValue(App1Header.Tag.GPSINFO,"as");
-            exifHeader.setValue(App1Header.Tag.DATETIMEORIGINAL, "2007:11:04 07:42:56");
-            // 保存
-            jpegHeaders.save(true);
-
-
-            jsonObject.put("message","successful");
-        } catch (Exception e) {
-            e.printStackTrace();
-            jsonObject.put("message","error");
-        }
-        return jsonObject;
-    }
+//    public static JSONObject exifWrite(File file){
+//        JSONObject jsonObject = new JSONObject();
+//
+//        try {
+//
+//            JpegHeaders jpegHeaders = new JpegHeaders(file.toString());
+//
+//            // EXIF
+//            App1Header exifHeader = jpegHeaders.getApp1Header();
+//
+//            // 遍历显示EXIF
+////            Map.Entry entry;
+////            entry.getKey()
+////            SortedMap tags = exifHeader.getTags();
+////            for (Map.Entry entry : tags.entrySet()) {
+////                System.out.println(entry.getKey() + "[" + entry.getKey().name
+////                        + "]:" + entry.getValue());
+////            }
+//
+//            // 修改EXIF的拍照日期
+////            exifHeader.setValue(App1Header.Tag.GPSINFO,"as");
+//            exifHeader.setValue(App1Header.Tag.DATETIMEORIGINAL, "2007:11:04 07:42:56");
+//            // 保存
+//            jpegHeaders.save(true);
+//
+//
+//            jsonObject.put("message","successful");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            jsonObject.put("message","error");
+//        }
+//        return jsonObject;
+//    }
 
 
 
