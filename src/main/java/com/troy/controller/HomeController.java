@@ -1,5 +1,7 @@
 package com.troy.controller;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -14,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 // 注解标注此类为springmvc的controller，url映射为"/home"
 @Controller
-@RequestMapping("/home")
+@RequestMapping("/troy")
 public class HomeController {
     //添加一个日志器
     private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -22,9 +24,22 @@ public class HomeController {
     //映射一个action
     @RequestMapping("/frist")
     public String frist(HttpServletRequest request) {
-        //输出日志文件
+        JSONObject msg = new JSONObject();
+        try {
+            //输出日志文件
 //        logger.info("the first jsp pages");
-        //返回一个index.jsp这个视图
-        return "fristJSP";
+            //返回一个index.jsp这个视图
+
+            msg.put("status", "200");
+            msg.put("message", "sucess");
+        } catch (Exception e) {
+            e.printStackTrace();
+            msg.put("status", "500");
+            msg.put("message", "erro:" + e.getMessage());
+            msg.put("data", new JSONArray());
+        }
+        request.setAttribute("result", msg);
+
+        return "json";
     }
 }
