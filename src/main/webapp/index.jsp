@@ -11,6 +11,7 @@
     <title>Title</title>
 </head>
 <body>
- <h1>Views JSP 在下载</h1>
+ <h1>studyDemo</h1>
+ <h2>Troy</h2>
 </body>
 </html>
