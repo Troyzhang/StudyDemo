@@ -4,6 +4,7 @@ import com.troy.demo.*;
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
@@ -18,7 +19,8 @@ import java.io.File;
 public class demoAction {
 
     @RequestMapping("/demo8")
-    public String demo8(HttpServletRequest request){
+    public String demo8(HttpServletRequest request,
+                        @RequestParam(value = "input", defaultValue = "") String input){
 
         demo8 d8 = new demo8();
         JSONObject msg = new JSONObject();

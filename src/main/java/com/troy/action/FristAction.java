@@ -4,6 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,13 +17,14 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/frist")
 public class FristAction {
 
-    @RequestMapping("/a")
-    public String a(HttpServletRequest request){
+    @RequestMapping("/total")
+    public String a(HttpServletRequest request,
+                    @RequestParam(value = "a" , defaultValue = "")int a){
         JSONObject msg = new JSONObject();
         try {
 
             int sum = 0;
-            for (int i = 0; i < 100; i++){
+            for (int i = 0; i <= a; i++){
                 sum+=i;
             }
 
