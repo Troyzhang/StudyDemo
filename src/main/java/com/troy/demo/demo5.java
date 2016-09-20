@@ -173,7 +173,7 @@ public class demo5 {
     public static void main(String[] args) throws Exception {
         // 创建 Excel 文件的输入流对象
         System.out.println("输入流对象...");
-        String path = "/Users/zhangyongyu/Desktop/Exif/model/makeModel.xls";
+        String path = "/Users/zhangyongyu/Desktop/Exif/model/apple model.xls";
         FileInputStream excelFileInputStream = new FileInputStream(path);
         // XSSFWorkbook 就代表一个 Excel 文件
         // 创建其对象，就打开这个 Excel 文件
@@ -203,24 +203,29 @@ public class demo5 {
             //altitude
 //            String altitude = altitude(nCell1.getStringCellValue(), nCell2.getStringCellValue());
             //makeModel
-			String makeModel = modelVcg(nCell1.getStringCellValue(), nCell2.getStringCellValue());
+//			String makeModel = modelVcg(nCell1.getStringCellValue(), nCell2.getStringCellValue());
             //exposure
 //			String exposure = exposureTimeVcg(nCell1.getStringCellValue());
             //huaWeiVcg
 //            String huaWei = huaWeiVcg(nCell1.getStringCellValue());
+            //appleVcg
 
-            HSSFCell nCell3 = row.createCell(3);
+            String apple = appleVcg(nCell2.getStringCellValue());
+
+
+            HSSFCell nCell4 = row.createCell(3);
 //			HSSFCell nCell2 = row.createCell(1);
 
 //			nCell3.setCellValue(mix_make);
 //            nCell3.setCellValue(huaWei);
-			nCell3.setCellValue(makeModel);
+//			nCell3.setCellValue(makeModel);
 //			nCell2.setCellValue(exposure);
+            nCell4.setCellValue(apple);
 
             StringBuilder employeeInfoBuilder = new StringBuilder();
             employeeInfoBuilder.append("exif信息 --> ").append("Cell1 : ").append(nCell1.getStringCellValue());
 //                    .append(" , Cell2 : ").append(nCell2.getStringCellValue());
-            System.out.println(employeeInfoBuilder.toString()+"  ,  Cell3 : "+nCell3);
+            System.out.println(employeeInfoBuilder.toString()+"  ,  Cell4 : "+nCell4);
         }
 
 //		// ------ 创建一行新的数据 ----------//
@@ -319,6 +324,34 @@ public class demo5 {
             e.printStackTrace();
         }
 
+        return result;
+    }
+
+
+    public static String appleVcg(String model) {
+        String result = null;
+        try {
+            if (model != null) {
+                if (!model.contains("iPhone ")) {
+                    if (model.contains("iPhone3,")) result = "iPhone 4";
+                    else if (model.contains("iPhone4,")) result = "iPhone 4S";
+                    else if (model.contains("iPhone5,1")) result = "iPhone 5 GSM";
+                    else if (model.contains("iPhone5,2")) result = "iPhone 5 CDMA";
+                    else if (model.contains("iPhone5,3")) result = "iPhone 5C";
+                    else if (model.contains("iPhone6,1")) result = "iPhone 5S CDMA";
+                    else if (model.contains("iPhone6,2")) result = "iPhone 5S GSM";
+                    else if (model.contains("iPhone7,2")) result = "iPhone 6";
+                    else if (model.contains("iPhone7,1")) result = "iPhone 6 Plus";
+                    else if (model.contains("iPhone8,1")) result = "iPhone 6S";
+                    else if (model.contains("iPhone8,2")) result = "iPhone 6S Plus";
+                    else result = model;
+                }else {
+                    result = model;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return result;
     }
 }

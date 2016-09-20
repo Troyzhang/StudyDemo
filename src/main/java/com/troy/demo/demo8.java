@@ -21,7 +21,7 @@ public class demo8 {
     public static void main(String[] args) {
 
 
-        String idurl = "12.jpg";
+        String idurl = "IMG_0104.JPG.jpeg";
 
         File file = new File("/Users/zhangyongyu/Desktop/Exif/pic/" + idurl);
 
