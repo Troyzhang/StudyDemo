@@ -18,7 +18,7 @@ public class AddWatermark {
 
     public void start() {
         BufferedImage oImage = ImageUtil.getImage("/Users/zhangyongyu/Desktop/11.jpg");
-        BufferedImage wImage = ImageUtil.getImage("/Users/zhangyongyu/Desktop/12.jpg");
+        BufferedImage wImage = ImageUtil.getImage("/Users/zhangyongyu/Desktop/22.jpg");
         int type = oImage.getType();
         WritableRaster oRaster = oImage.getRaster();
         WritableRaster wRaster = wImage.getRaster();
@@ -27,11 +27,10 @@ public class AddWatermark {
         int wWidth = wRaster.getWidth();
         int wHeight = wRaster.getHeight();
         int[] oPixels = new int[3 * oWidth * oHeight];
-        int[] wPixels = new int[wWidth * wHeight];
+        int[] wPixels = new int[3 * wWidth * wHeight];
         oRaster.getPixels(0, 0, oWidth, oHeight, oPixels);
         wRaster.getPixels(0, 0, wWidth, wHeight, wPixels);
-        int[][][] RGBPixels = ImageUtil.getRGBArrayToMatrix(oPixels, oWidth,
-                oHeight);
+        int[][][] RGBPixels = ImageUtil.getRGBArrayToMatrix(oPixels, oWidth,oHeight);
         // 得到RGB图像的三层矩阵表示
         double[][] rPixels = MathTool.intToDoubleMatrix(RGBPixels[2]);
         int[][] wDMatrix = ImageUtil.arrayToMatrix(wPixels, wWidth, wHeight);
@@ -74,6 +73,6 @@ public class AddWatermark {
         temp[2] = result;
         double[] rgbResult = ImageUtil.getRGBMatrixToArray(temp);
         // 将BufferedImage对象写入磁盘
-        ImageUtil.setImage(rgbResult, oWidth, oHeight, "/Users/zhangyongyu/Desktop/result.bmp","bmp", type);
+        ImageUtil.setImage(rgbResult, oWidth, oHeight, "/Users/zhangyongyu/Desktop/result22.bmp","bmp", type);
     }
 }

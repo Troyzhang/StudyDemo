@@ -15,9 +15,9 @@ public class ExtractWatermark {
 
     public void start(int wWidth, int wHeight) {
         // mImage是嵌入水印后的图像
-        BufferedImage mImage = ImageUtil.getImage("D://result.bmp");
+        BufferedImage mImage = ImageUtil.getImage("/Users/zhangyongyu/Desktop/result.bmp");
         // 原始图像
-        BufferedImage oImage = ImageUtil.getImage("D://lena.jpg");
+        BufferedImage oImage = ImageUtil.getImage("/Users/zhangyongyu/Desktop/11.jpg");
         WritableRaster oRaster = oImage.getRaster();
         WritableRaster mRaster = mImage.getRaster();
         int oWidth = oRaster.getWidth();
@@ -82,7 +82,7 @@ public class ExtractWatermark {
         }
         double[] outResult = ImageUtil.matrixToArray(result);
         // 把嵌入水印的结果写到BufferedImage对象
-        ImageUtil.setImage(outResult, wWidth, wHeight, "D://mark.bmp", "bmp",
+        ImageUtil.setImage(outResult, wWidth, wHeight, "/Users/zhangyongyu/Desktop/123.bmp", "bmp",
                 BufferedImage.TYPE_BYTE_BINARY);
     }
 }
