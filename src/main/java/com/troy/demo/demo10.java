@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  * Created by zhangyongyu on 2016/9/22.
- *
+ * 时间戳
  * @parse com.troy.demo
  */
 public class demo10 {
@@ -20,7 +20,11 @@ public class demo10 {
 
         Date date = simpleDateFormat.parse("2016-09-18 15:00:00");
 
-
+        for (int i=0; i<10;i++) {
+            Date date1 = new Date();
+            System.out.println(date1.getTime());
+        }
         System.out.println(date.getTime());
+
     }
 }
