@@ -19,12 +19,14 @@ public class demo10 {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
         Date date = simpleDateFormat.parse("2016-09-18 15:00:00");
+        Date date2 = new Date();
 
         for (int i=0; i<10;i++) {
             Date date1 = new Date();
-            System.out.println(date1.getTime());
+//            System.out.println(date1.getTime());
         }
-        System.out.println(date.getTime());
+        System.out.println(date2);
+        System.out.println(date2.getTime());
 
     }
 }
