@@ -6,6 +6,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
 /**
@@ -14,7 +15,7 @@ import java.io.FileOutputStream;
  * @parse com.troy.demo
  */
 public class demo12 {
-    public static void main(String[] args) throws Exception {
+    public static void masain(String[] args) throws Exception {
         // 创建 Excel 文件的输入流对象
         System.out.println("输入流对象...");
         String path = "/Users/zhangyongyu/Desktop/1.xls";
@@ -132,4 +133,45 @@ public class demo12 {
             System.out.println("写入完成...");
         }
     }
+
+
+    public  static  void  main(String[] args) throws Exception {
+        String path = "/Users/zhangyongyu/Desktop/123.xls";
+        FileInputStream excelFileInputStream = new FileInputStream(path);
+        // XSSFWorkbook 就代表一个 Excel 文件
+        // 创建其对象，就打开这个 Excel 文件
+        HSSFWorkbook workbook = new HSSFWorkbook(excelFileInputStream);
+        // 输入流使用后，及时关闭！这是文件流操作中极好的一个习惯！
+        excelFileInputStream.close();
+        System.out.println("关闭流对象...");
+        // XSSFSheet 代表 Excel 文件中的一张表格
+        // 我们通过 getSheetAt(0) 指定表格索引来获取对应表格
+        // 注意表格索引从 0 开始！
+        HSSFSheet sheet = workbook.getSheetAt(0);
+
+        for (int i = 1; i <= 50 ;i++) {
+            HSSFRow bRow = sheet.createRow(i);
+            HSSFCell nCell = bRow.createCell(0);
+
+            nCell.setCellValue(i);
+        }
+
+
+
+        // 将最新的 Excel 数据写回到原始 Excel 文件中
+        // 首先要创建一个原始Excel文件的输出流对象！
+        System.out.println("开始写入...");
+        FileOutputStream excelFileOutPutStream = new FileOutputStream(path);
+        // 将最新的 Excel 文件写入到文件输出流中，更新文件信息！
+        workbook.write(excelFileOutPutStream);
+        // 执行 flush 操作， 将缓存区内的信息更新到文件上
+        excelFileOutPutStream.flush();
+        // 使用后，及时关闭这个输出流对象， 好习惯，再强调一遍！
+        excelFileOutPutStream.close();
+        System.out.println("写入完成...");
+
+
+    }
+
+
 }
