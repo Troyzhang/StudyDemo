@@ -13,7 +13,7 @@ public class StudyDemoLauncher {
         String path = Thread.currentThread().getContextClassLoader().getResource("").getFile();
         path = path.replace("target/classes/", "");
         path = path.replace("classes/", "");
-        Server server = new Server(8096);
+        Server server = new Server(8052);
         String web = path + "src/main/webapp/";
         WebAppContext context = new WebAppContext();
         context.setDescriptor(web + "WEB-INF/web.xml");

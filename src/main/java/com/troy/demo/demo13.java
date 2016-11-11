@@ -10,20 +10,27 @@ import com.alibaba.fastjson.JSONObject;
 public class demo13 {
 
     public static void main(String[] args){
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("gpsLatitude","37° 54' 58.91\"");
-        jsonObject.put("gpsLongitude","-37° 54' 58.91\"");
+//        JSONObject jsonObject = new JSONObject();
+//        jsonObject.put("gpsLatitude","37° 54' 58.91\"");
+//        jsonObject.put("gpsLongitude","-37° 54' 58.91\"");
 
-        exifTools(jsonObject);
+//        exifTools(jsonObject);
 
-        System.out.println(jsonObject);
+        String a = "-37° 54' 58.91\"";
+
+        Double b = convertToDecimalByString(a);
+
+        System.out.println(b);
     }
 
 
     public static Double convertToDecimalByString(String latlng) {
         try {
             latlng = latlng.replace(" ", "");
+            int i=latlng.indexOf("°");
+            System.out.println("==="+i);
             double du = Double.parseDouble(latlng.substring(0, latlng.indexOf("°")));
+
             double fen = Double.parseDouble(latlng.substring(latlng.indexOf("°") + 1, latlng.indexOf("'")));
             double miao = Double.parseDouble(latlng.substring(latlng.indexOf("'") + 1, latlng.indexOf("\"")));
             if (du < 0)
