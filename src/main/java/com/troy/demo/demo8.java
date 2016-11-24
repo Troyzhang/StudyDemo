@@ -1,11 +1,11 @@
 package com.troy.demo;
 
+import com.alibaba.fastjson.JSONObject;
 import com.drew.imaging.ImageMetadataReader;
 import com.drew.imaging.ImageProcessingException;
 import com.drew.metadata.Directory;
 import com.drew.metadata.Metadata;
 import com.drew.metadata.Tag;
-import org.json.JSONObject;
 
 import java.io.*;
 

@@ -41,14 +41,14 @@ public class XmlImpl implements XmlInterface {
 
     public void createXml(String fileName) {
 
-        Element root = this.document.createElement("JingpinBean");
+        Element root = this.document.createElement("Jingpin");
         this.document.appendChild(root);
 
         Element publishTime = this.document.createElement("publishTime");
         publishTime.appendChild(this.document.createTextNode("publishTime"));
         root.appendChild(publishTime);
 
-        Element items = this.document.createElement("ItemBean");
+        Element items = this.document.createElement("Item");
         root.appendChild(items);
 
         Element employee = this.document.createElement("item");
@@ -79,7 +79,7 @@ public class XmlImpl implements XmlInterface {
         createTime.appendChild(this.document.createTextNode("createTime"));
         employee.appendChild(createTime);
 
-//        root.appendChild(ItemBean);
+//        root.appendChild(Item);
 
         TransformerFactory tf = TransformerFactory.newInstance();
         try {
