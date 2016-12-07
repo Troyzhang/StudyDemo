@@ -1,14 +1,13 @@
-package com.troy.xml2;
+package com.troy.xml;
 
-import com.troy.xml2.bean.Item;
-import com.troy.xml2.bean.Jingpin;
+import com.troy.xml.bean.Item;
+import com.troy.xml.bean.Jingpin;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.StringWriter;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,7 +15,7 @@ import java.util.Set;
 /**
  * Created by zhangyongyu on 2016/11/14.
  *
- * @parse com.troy.xml2
+ * @parse com.troy.xml
  */
 public class Java2Xml {
     public static void main() throws JAXBException, IOException {

@@ -1,16 +1,15 @@
-package com.troy.xml3;
+package com.troy.xml.xmlTest;
 
 import java.util.Set;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 /**
  * Created by zhangyongyu on 2016/11/24.
  *
- * @parse com.troy.xml3
+ * @parse com.troy.xml.xmlTest
  */
 @XmlType
 @XmlAccessorType(XmlAccessType.FIELD)

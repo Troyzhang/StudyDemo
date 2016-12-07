@@ -1,4 +1,4 @@
-package com.troy.xml3;
+package com.troy.xml.xmlTest;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 /**
  * Created by zhangyongyu on 2016/11/24.
  *
- * @parse com.troy.xml3
+ * @parse com.troy.xml.xmlTest
  */
 public class DateAdapter extends XmlAdapter<String, Date> {
     private String pattern = "yyyy-MM-dd HH:mm:ss";

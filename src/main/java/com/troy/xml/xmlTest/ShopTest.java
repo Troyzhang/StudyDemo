@@ -1,4 +1,4 @@
-package com.troy.xml3;
+package com.troy.xml.xmlTest;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -15,7 +15,7 @@ import javax.xml.bind.Unmarshaller;
 /**
  * Created by zhangyongyu on 2016/11/24.
  *
- * @parse com.troy.xml3
+ * @parse com.troy.xml.xmlTest
  */
 public class ShopTest {
 

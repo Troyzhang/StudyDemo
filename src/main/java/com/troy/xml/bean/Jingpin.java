@@ -1,4 +1,4 @@
-package com.troy.xml2.bean;
+package com.troy.xml.bean;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * Created by zhangyongyu on 2016/11/14.
  *
- * @parse com.troy.xml2.bean
+ * @parse com.troy.xml.bean
  */
 @XmlType(name="jingpin",propOrder={"publishTime","items"})
 @XmlAccessorType(XmlAccessType.FIELD)

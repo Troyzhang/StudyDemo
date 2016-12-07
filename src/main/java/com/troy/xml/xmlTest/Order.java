@@ -1,4 +1,4 @@
-package com.troy.xml3;
+package com.troy.xml.xmlTest;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 /**
  * Created by zhangyongyu on 2016/11/24.
  *
- * @parse com.troy.xml3
+ * @parse com.troy.xml.xmlTest
  */
 @XmlType(name="order",propOrder={"shopName","orderNumber","price","amount","purDate","customer"})
 @XmlAccessorType(XmlAccessType.FIELD)

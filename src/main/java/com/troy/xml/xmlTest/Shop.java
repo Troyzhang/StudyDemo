@@ -1,9 +1,9 @@
-package com.troy.xml3;
+package com.troy.xml.xmlTest;
 
 /**
  * Created by zhangyongyu on 2016/11/24.
  *
- * @parse com.troy.xml3
+ * @parse com.troy.xml.xmlTest
  */
 
 import javax.xml.bind.annotation.XmlAccessOrder;

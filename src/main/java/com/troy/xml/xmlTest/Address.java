@@ -1,6 +1,5 @@
-package com.troy.xml3;
+package com.troy.xml.xmlTest;
 
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -11,7 +10,7 @@ import javax.xml.bind.annotation.XmlAccessorOrder;
 /**
  * Created by zhangyongyu on 2016/11/24.
  *
- * @parse com.troy.xml3
+ * @parse com.troy.xml.xmlTest
  */
 @XmlType(propOrder={"state","province","city","street","zip"})
 @XmlAccessorOrder(XmlAccessOrder.ALPHABETICAL)

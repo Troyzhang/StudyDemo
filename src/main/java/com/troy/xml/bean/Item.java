@@ -1,4 +1,4 @@
-package com.troy.xml2.bean;
+package com.troy.xml.bean;
 
 import javax.xml.bind.annotation.*;
 import java.util.Date;
@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * Created by zhangyongyu on 2016/11/14.
  *
- * @parse com.troy.xml2.bean
+ * @parse com.troy.xml.bean
  */
 @XmlType(name="item",propOrder={"oriPicSrc","pageUrl","picTitle","surr1","surr2","tag","category","createTime"})
 @XmlAccessorType(XmlAccessType.FIELD)
