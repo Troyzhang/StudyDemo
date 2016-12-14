@@ -21,7 +21,7 @@ public class GetConnection {
             e1.printStackTrace();
         }
 
-        String url="jdbc:mysql://localhost:3306/vcg_community";    //JDBC的URL
+        String url="jdbc:mysql://localhost:3306/mysql";    //JDBC的URL
         //调用DriverManager对象的getConnection()方法，获得一个Connection对象
         Connection conn;
         try {
